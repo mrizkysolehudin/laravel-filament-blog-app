@@ -31,7 +31,7 @@ class CategoryResource extends Resource
                 TextInput::make('title')
                     ->required()
                     ->maxLength(2048)
-                    ->reactive()
+                    // ->reactive()
                     ->afterStateUpdated(function ($set, $state) {
                         $set('slug', Str::slug($state));
                     }),

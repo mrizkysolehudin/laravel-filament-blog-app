@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class CategoryPost extends Model
 {
-    use HasFactory;
+    protected $table = 'category_posts';
 
+    use HasFactory;
 
 }
