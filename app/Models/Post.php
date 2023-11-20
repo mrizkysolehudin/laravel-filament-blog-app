@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -26,4 +27,16 @@ class Post extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function getFormattedDate()
+    {
+        return $this->published_at->format('F jS Y');
+    }
+
+    public function shortBody($words = 30): string
+    {
+        return Str::words(strip_tags($this->body), $words);
+    }
+
+
 }

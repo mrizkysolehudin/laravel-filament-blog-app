@@ -17,9 +17,8 @@ class PostController extends Controller
         $posts = Post::query()
             ->where('active', '=', 1)
             ->whereDate('published_at', '<', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->limit(1)
-            ->first();
+            ->limit(5)
+            ->get();
 
         return view('home', compact('posts'));
     }
