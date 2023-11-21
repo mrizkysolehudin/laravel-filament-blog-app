@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'home'])->name('home');
-Route::get('/{post:slug}', [PostController::class, 'show'])->name('view');
+Route::get('/{post:slug}', [PostController::class, 'show'])->name('post-detail');
+Route::get('/category/{category:slug}', [PostController::class, 'byCategory'])->name('by-category');

@@ -2,8 +2,10 @@
 
 namespace App\View\Components;
 
+use App\Models\Category;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class AppLayout extends Component
@@ -21,6 +23,14 @@ class AppLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.app-layout');
+        $categories = Category::query()
+            ->join('category_post', 'category_post.category_id', '=', 'categories.id')
+            ->select('categories.title', 'categories.slug', DB::raw('count(*) as total'))
+            ->groupBy(['categories.title', 'categories.slug'])
+            ->orderByDesc('total')
+            ->limit(5)
+            ->get();
+
+        return view('layouts.app-layout', compact('categories'));
     }
 }
