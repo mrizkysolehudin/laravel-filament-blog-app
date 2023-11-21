@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Blog Template</title>
+    <title>Intelect Blog</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
@@ -61,10 +61,10 @@
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
             <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
-                Minimal Blog
+                Intelect Blog
             </a>
             <p class="text-lg text-gray-600">
-                Lorem Ipsum Dolor Sit Amet
+                Elevate your mind with concise insights and thought-provoking articles
             </p>
         </div>
     </header>
