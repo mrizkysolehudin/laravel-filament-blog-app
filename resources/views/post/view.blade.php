@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :meta-title="$post->meta_title ?: $post->title" :meta-description="$post->meta_description ?: $post->body">
 
     <!-- Post Section -->
     <section class="w-full md:w-2/3 flex flex-col items-center px-3">
@@ -26,14 +26,14 @@
 
         <div class="w-full {{ $prev ? 'flex' : 'grid-cols-2' }} pt-6">
             @if ($prev)
-                <a href="{{ route('view', $prev) }}" class="w-1/2 bg-white shadow hover:shadow-md text-left p-6">
+                <a href="{{ route('post-detail', $prev) }}" class="w-1/2 bg-white shadow hover:shadow-md text-left p-6">
                     <p class="text-lg text-blue-800 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i>
                         Previous</p>
                     <p class="pt-2 font-semibold text-sm">{{ \Illuminate\Support\Str::words($prev->title, 5) }}</p>
                 </a>
             @endif
 
-            <a href="{{ route('view', $next) }}" class="w-1/2 bg-white shadow hover:shadow-md text-right p-6 ">
+            <a href="{{ route('post-detail', $next) }}" class="w-1/2 bg-white shadow hover:shadow-md text-right p-6 ">
                 <p class="text-lg text-blue-800 font-bold flex items-center justify-end">Next <i
                         class="fas fa-arrow-right pl-1"></i></p>
                 <p class="pt-2 font-semibold text-sm">{{ \Illuminate\Support\Str::words($next->title, 5) }}</p>

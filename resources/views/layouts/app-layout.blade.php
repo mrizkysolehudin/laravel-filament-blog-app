@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelect Blog</title>
-    <meta name="author" content="David Grzyb">
-    <meta name="description" content="">
+    <title>{{ $metaTitle ?: 'Intellect Blog' }}</title>
+    <meta name="author" content="The Intellect">
+    <meta name="description" content="{{ $metaDescription ?: 'Intellect Blog' }}">
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -35,7 +35,8 @@
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
                     <li><a class="hover:text-gray-200 hover:underline px-4" href="{{ route('home') }}">Home</a></li>
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="{{ route('about-us') }}">About</a>
+                    </li>
                 </ul>
             </nav>
 

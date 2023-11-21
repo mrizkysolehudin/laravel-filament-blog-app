@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout meta-title="About TheIntellect's Blog" meta-description="Description about TheIntellect's Blog">
 
     <section class="w-full flex flex-col items-center px-3">
         <article class="flex flex-col shadow my-4">
