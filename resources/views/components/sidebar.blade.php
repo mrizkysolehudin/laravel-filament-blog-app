@@ -5,7 +5,7 @@
          </h4>
          @foreach ($categories as $category)
              <a href="{{ route('by-category', $category) }}"
-                 class="font-medium block pb-1 px-3 rounded hover:font-bold hover:text-gray-400 {{ request('category')->slug === $category->slug ? 'bg-blue-600 text-white' : '' }}">
+                 class="font-medium block pb-1 px-3 rounded hover:font-bold hover:text-gray-400 {{ request('category')?->slug === $category->slug ? 'bg-blue-600 text-white' : '' }}">
                  {{ $category->title }} ({{ $category->total }})
 
              </a>
